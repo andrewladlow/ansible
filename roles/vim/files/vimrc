@@ -20,9 +20,12 @@ set background=dark
 " Replace <leader> (default '\') with ','
 let mapleader = ","
 
-" Shortcuts
+" Toggle NERDTree with , nt
 nmap <leader>nt :NERDTreeToggle <cr>
+" Toggle indent guidelines with ,,
 nmap <leader><leader> :IndentLinesToggle <cr>
+" Toggle line numbers with ,.
+nmap <leader>. :set invnumber <cr>
 " Next tab
 nmap <leader>bn :bn <cr>
 " Prev tab

@@ -12,6 +12,6 @@
 
 - name: Copy and extract .vim archive
   unarchive:
-    src: files/.vim.tar.gz
+    src: files/vim.tar.gz
     dest: ~/
     creates: ~/.vim

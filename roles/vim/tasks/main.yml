@@ -1,0 +1,19 @@
+---
+- name: Install vim and set as default editor
+
+  tasks:
+  - name: Install vim
+    apt:
+      name: vim
+      state: latest
+
+  - name: Copy vimrc config
+    copy:
+      src: files/vimrc
+      dest: /etc/vim/vimrc
+
+  - name: Copy .vim folder
+    copy:
+      src: files/.bundle  
+      dest: ~/.bundle
+

@@ -1,6 +1,6 @@
 ---
 - name: Install vim
-  apt:
+  package:
     name: vim
     state: latest
 
@@ -10,8 +10,8 @@
     dest: /etc/vim/vimrc
     force: no
 
-- name : Install rsync locally
-  apt:
+- name: Install rsync locally
+  package:
     name: rsync
     state: latest
   delegate_to: localhost

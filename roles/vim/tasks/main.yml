@@ -10,8 +10,13 @@
     dest: /etc/vim/vimrc
     force: no
 
-- name: Copy and extract .vim archive
-  unarchive:
-    src: files/vim.tar.gz
-    dest: ~/
-    creates: ~/.vim
+- name : Install rsync locally
+  apt:
+    name: rsync
+    state: latest
+  delegate_to: localhost
+
+- name: Copy .vim folder
+  synchronize:
+    src: files/vim/
+    dest: ~/.vim/

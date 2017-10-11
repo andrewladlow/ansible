@@ -2,8 +2,9 @@
 - name: Add teamspeak user
   user:
     name: teamspeak
-    group: teamspeak
     system: yes
+    createhome: no
+    shell: /bin/false
 
 - name: Download teamspeak bz2
   get_url:
@@ -13,16 +14,12 @@
 - name: Extract teamspeak bz2
   unarchive:
     src: /tmp/ts3-3.0.13.8.tar.bz2
-    dest: /home/teamspeak/
-
-- name: Assign teamspeak folder permissions
-  file:
-    dest: /home/teamspeak/
-    state: directory
+    remote_src: yes
+    dest: /opt/
+    mode: 0700
     owner: teamspeak
     group: teamspeak
-    mode: 0700
-    recurse: yes
+    creates: /opt/teamspeak3-server_linux_amd64
 
 - name: Copy teamspeak systemd service file
   copy:

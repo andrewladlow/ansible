@@ -8,7 +8,6 @@
   copy:
     src: files/vimrc
     dest: /etc/vim/vimrc
-    force: no
 
 - name: Install rsync locally
   package:

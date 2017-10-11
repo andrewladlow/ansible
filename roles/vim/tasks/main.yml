@@ -13,7 +13,7 @@
 - name: Install rsync locally
   package:
     name: rsync
-    state: latest
+    state: present
   delegate_to: localhost
 
 - name: Copy .vim folder

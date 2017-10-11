@@ -3,4 +3,9 @@
   copy:
     src: files/bashrc
     dest: ~/.bashrc
-    backup: yes
+
+- name: Copy screenrc
+  copy:
+    src: files/screenrc
+    dest: ~/.screenrc
+

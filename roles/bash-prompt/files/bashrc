@@ -16,5 +16,4 @@ PS1="\[\033[38;5;10m\]\u@\h\[\033[38;5;7m\]:\[\033[38;5;12m\]\w\[\033[38;5;7m\]\
 # bash title
 PROMPT_COMMAND='printf "\033]0;%s@%s: %s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/"~"}"'
 
-# gruvbox colour script
-source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+export TERM=xterm-256color

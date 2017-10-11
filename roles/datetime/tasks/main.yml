@@ -2,7 +2,7 @@
 - name: Set timezone to London
   timezone:
     name: Europe/London
-    notify: "restart time reliant services"
+  notify: "restart time reliant services"
 
 - name: Generate en_GB.UTF-8 locale
   locale_gen:

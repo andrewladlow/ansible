@@ -1,0 +1,20 @@
+# enable colours
+test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+
+# command colours
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# bash prompt colours
+PS1="\[\033[38;5;10m\]\u@\h\[\033[38;5;7m\]:\[\033[38;5;12m\]\w\[\033[38;5;7m\]\\$\[$(tput sgr0)\] "
+
+# bash title
+PROMPT_COMMAND='printf "\033]0;%s@%s: %s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/"~"}"'
+
+# gruvbox colour script
+source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"

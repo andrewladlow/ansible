@@ -1,0 +1,5 @@
+---
+- name: Set ssh port
+  lineinfile:
+    regexp: 'Port'
+    line: 'Port {{ sshPort }}'

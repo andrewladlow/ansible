@@ -1,0 +1,8 @@
+[Unit]
+Description=Munin socket
+
+[Socket]
+ListenStream=/var/run/munin/fcgi-munin-graph.sock
+
+[Install]
+WantedBy=sockets.target

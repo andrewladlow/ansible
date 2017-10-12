@@ -1,5 +1,5 @@
 [Unit]
-Description=Munin cgi graph
+Description=Munin cgi graphs
 After=network.target
 Requires=munin-cgi-graph.socket
 

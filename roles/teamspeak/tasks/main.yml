@@ -6,14 +6,18 @@
     createhome: no
     shell: /bin/false
 
+- name: Get latest teamspeak server version
+  command: wget -q https://www.teamspeak.com/en/downloads.html -O - | grep -m 1 -A 2 'Server 64-bit' | grep -E -o '.\..\..{1,2}\..'
+  register: teamspeakVersion
+
 - name: Download teamspeak bz2
   get_url:
-    url: http://dl.4players.de/ts/releases/3.0.13.8/teamspeak3-server_linux_amd64-3.0.13.8.tar.bz2
-    dest: /tmp/ts3-3.0.13.8.tar.bz2
+    url: http://dl.4players.de/ts/releases/{{ teamspeakVersion }}/teamspeak3-server_linux_amd64-{{ teamspeakVersion }}.tar.bz2
+    dest: /tmp/ts3-{{ teamspeakVersion }}.tar.bz2
 
 - name: Extract teamspeak bz2
   unarchive:
-    src: /tmp/ts3-3.0.13.8.tar.bz2
+    src: /tmp/ts3-{{ teamspeakVersion }}.tar.bz2
     remote_src: yes
     dest: /opt/
     mode: 0700

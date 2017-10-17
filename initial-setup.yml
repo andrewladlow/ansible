@@ -1,0 +1,12 @@
+---
+- name: Initial setup
+  hosts: all
+  # Pre-installing python: https://gist.github.com/gwillem/4ba393dceb55e5ae276a87300f6b8e6f
+  gather_facts: False
+  pre_tasks:
+    - name: 'pre_task : Install python 2'
+      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+      register: output
+      changed_when: output.stdout != ""
+  roles:
+    - ssh

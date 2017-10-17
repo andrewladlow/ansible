@@ -7,7 +7,7 @@
     shell: /bin/false
 
 - name: Get latest teamspeak server version
-  command: wget -q https://www.teamspeak.com/en/downloads.html -O - | grep -m 1 -A 2 'Server 64-bit' | grep -E -o '.\..\..{1,2}\..'
+  shell: wget -q https://www.teamspeak.com/en/downloads.html -O - | grep -m 1 -A 2 'Server 64-bit' | grep -E -o '.\..\..{1,2}\..'
   register: teamspeakVersion
 
 - name: Download teamspeak bz2

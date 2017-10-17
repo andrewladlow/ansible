@@ -1,0 +1,9 @@
+---
+- name: Install server roles
+  hosts: all
+  roles:
+    - seedbox
+    #- vim
+    #- teamspeak
+    #- datetime
+    #- bash-prompt

@@ -6,7 +6,7 @@
 
 - name: Copy vimrc config
   copy:
-    src: files/vimrc
+    src: vimrc
     dest: /etc/vim/vimrc
 
 - name: Install rsync locally
@@ -18,7 +18,9 @@
 - name: Copy .vim folder
   synchronize:
     src: files/vim/
-    dest: ~/.vim/
+    dest: "{{ ansible_env.HOME }}/.vim/"
+    perms: no
+  
 
 - name: Set vim as default editor
   command: update-alternatives --set editor /usr/bin/vim.basic

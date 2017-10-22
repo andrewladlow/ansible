@@ -1,0 +1,12 @@
+---
+- name: Install nginx
+  package:
+    name: nginx
+    state: present
+
+- name: Disable server tokens
+  lineinfile:
+    path: /etc/nginx/nginx.conf
+    regexp: '# server_tokens off;' 
+    line: '  server_tokens off;'
+  notify: 'Restart nginx'

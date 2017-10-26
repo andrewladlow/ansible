@@ -2,8 +2,11 @@
 - name: Install server roles
   hosts: all
   roles:
-    - seedbox
+    #- nginx
+    #- seedbox
     #- vim
     #- teamspeak
     #- datetime
     #- bash-prompt
+    #- munin
+    - munin-node

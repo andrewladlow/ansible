@@ -1,0 +1,5 @@
+---
+- name: Install munin
+  package:
+    name: munin
+    state: present

@@ -12,7 +12,7 @@
 - name: Copy .rtorrent.rc config file
   template:
     src: rtorrent.rc.j2
-    dest: "{{ ansible_env.HOME }}/.rtorrent.rc"
+    dest: "/home/{{ username }}/.rtorrent.rc"
 
 - name: Create rtorrent directories
   file:

@@ -1,3 +1,13 @@
 ---
 - include_role:
     name: rtorrent
+
+- include_role:
+    name: nginx
+
+- name: Install xml-rpc
+  package: 
+    name: libxmlrpc-c++8v5
+    state: present
+
+

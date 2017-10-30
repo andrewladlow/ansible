@@ -1,0 +1,10 @@
+[Unit]
+Description=rTorrent
+After=network.target
+
+[Service]
+ExecStart=rtorrent
+User={{ username }}
+
+[Install]
+WantedBy=multi-user.target

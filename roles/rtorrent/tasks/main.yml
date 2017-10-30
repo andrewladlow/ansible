@@ -1,4 +1,6 @@
 ---
-- name: Test
-  ping: 
+- name: Install rtorrent
+  package:
+    name: rtorrent
+    state: present
 

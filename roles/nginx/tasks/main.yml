@@ -9,4 +9,5 @@
     path: /etc/nginx/nginx.conf
     regexp: '# server_tokens off;' 
     line: '  server_tokens off;'
+    backrefs: yes
   notify: 'Restart nginx'

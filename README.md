@@ -7,6 +7,8 @@ bash-prompt: Bash prompt and title, colour support
 
 date-time: UK timezone and locale
 
+journald: Enable persistent storage for journald logging
+
 munin-node: Adding a new server to be monitored by munin
 
 munin: Local munin monitoring with systemd service

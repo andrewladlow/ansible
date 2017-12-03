@@ -1,12 +1,17 @@
 ---
 - name: Install server roles
   hosts: all
-  roles:
+  #gather_facts: no
+  pre_tasks:
+    #- raw: apt-get -y install python-simplejson
+  roles: 
     #- nginx
     #- seedbox
-    #- vim
-    #- teamspeak
+    - vim
+    - teamspeak
     #- datetime
-    #- bash-prompt
+    - bash-prompt
     #- munin
-    - munin-node
+    #- munin-node
+    #- rtorrent
+    - journald

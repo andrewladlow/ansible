@@ -13,9 +13,10 @@ alias egrep='egrep --color=auto'
 # bash prompt colours
 PS1="\[\033[38;5;10m\]\u@\h\[\033[38;5;7m\]:\[\033[38;5;12m\]\w\[\033[38;5;7m\]\\$\[$(tput sgr0)\] "
 
-# bash title
-PROMPT_COMMAND='printf "\033]0;%s@%s: %s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/"~"}"'
+# append session history to history file after every command, additionally set window title
+export PROMPT_COMMAND='history -a && printf "\033]0;%s@%s: %s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/"~"}"'
 
+# enable colour terminal
 export TERM=xterm-256color
 
 # save every command in 'history'

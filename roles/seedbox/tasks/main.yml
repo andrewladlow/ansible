@@ -2,12 +2,20 @@
 - include_role:
     name: rtorrent
 
+- include_rule:
+    name: rutorrent
+
 - include_role:
     name: nginx
 
 - name: Install xml-rpc
   package: 
     name: libxmlrpc-c++8v5
+    state: present
+
+- name: Install PHP 7.0
+  package:
+    name: php7.0
     state: present
 
 

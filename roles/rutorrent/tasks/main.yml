@@ -1,0 +1,52 @@
+---
+- name: Install rutorrent dependencies
+  package: "{{ item }}"
+  state: present
+  with_items:
+  - zip
+  - unzip
+  - zlib1g-dev
+  - ffmpeg
+  - mediainfo
+  - unrar
+  - rar
+
+- name: Download rutorrent package
+  git:
+    repo: https://github.com/Novik/ruTorrent
+    dest: /opt/rutorrent
+    owner: www-data
+    group: www-data
+    mode: 0755
+    recurse: yes
+
+- name: Remove rutorrent plugins
+  file:
+    state: absent
+    path: /opt/rutorrent/plugins
+
+- name: Download rutorrent plugins
+  git:
+    repo: https://github.com/Novik/ruTorrent/trunk/plugins
+    dest: /opt/rutorrent/plugins
+    owner: www-data
+    group: www-data
+    mode: 0755
+    recurse: yes
+
+- name: Replace rutorrent config
+  copy:
+    src: config.php
+    dest: /opt/rutorrent/conf/config.php
+    owner: www-data
+    group: www-data
+    mode: 0755
+
+- name: Replace rutorrent plugins config
+  copy:
+    src: plugins.ini
+    dest: /opt/rutorrent/conf/plugins.ini
+    owner: www-data
+    group: www-data
+    mode: 0755
+

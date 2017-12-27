@@ -7,12 +7,12 @@
   roles: 
     #- nginx
     #- seedbox
-    - vim
+    #- vim
     #- teamspeak
     #- datetime
-    - bash-prompt
+    #- bash-prompt
     #- munin
     #- munin-node
     #- rtorrent
-    - journald
+    #- journald
     - seedbox

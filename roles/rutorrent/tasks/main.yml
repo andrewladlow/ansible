@@ -32,7 +32,7 @@
 - name: Set rutorrent directory permissions
   file:
     state: directory
-    dest: /opt/rtorrent
+    dest: /opt/rutorrent
     owner: www-data
     group: www-data
     mode: 0755

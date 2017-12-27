@@ -1,1 +1,3 @@
 username: root
+home: /root/
+shell: /bin/false

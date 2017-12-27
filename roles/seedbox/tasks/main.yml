@@ -4,7 +4,7 @@
     name: rtorrent
 
 - name: Download rutorrent
-  include_rule:
+  include_role:
     name: rutorrent
 
 - name: Install nginx

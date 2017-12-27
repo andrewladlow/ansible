@@ -9,6 +9,12 @@
     name: screen
     state: present
 
+- name: Add rtorrent user
+  user:
+    name: "{{ username }}"
+    home: "{{ home }}"
+    shell: "{{ shell }}"
+
 - name: Copy .rtorrent.rc config file
   template:
     src: rtorrent.rc.j2

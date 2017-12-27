@@ -8,10 +8,11 @@
     #- nginx
     #- seedbox
     - vim
-    - teamspeak
+    #- teamspeak
     #- datetime
     - bash-prompt
     #- munin
     #- munin-node
     #- rtorrent
     - journald
+    - seedbox

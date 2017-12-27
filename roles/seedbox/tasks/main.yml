@@ -1,11 +1,14 @@
 ---
-- include_role:
+- name: Install rtorrent
+  include_role:
     name: rtorrent
 
-- include_rule:
+- name: Download rutorrent
+  include_rule:
     name: rutorrent
 
-- include_role:
+- name: Install nginx
+  include_role:
     name: nginx
 
 - name: Install xml-rpc

@@ -11,14 +11,46 @@
   include_role:
     name: nginx
 
-- name: Install xml-rpc
-  package: 
-    name: libxmlrpc-c++8v5
-    state: present
-
-- name: Install PHP 7.0
+- name: Install apache2-utils
   package:
-    name: php7.0
+    name: apache2-utils
     state: present
 
+- name: Create rutorrent htpasswd
+    path: /etc/nginx/.htpasswd
+    name: "{{ username }}"
+    password: "{{ password }}"
+    owner: root
+    group: root
+    mode: 0640
 
+- name: Create rutorrent http symlink
+  file:
+    src: /opt/rutorrent
+    dest: /var/www/html/rutorrent
+    owner: rtorrent
+    group: rtorrent
+    state: link
+
+- name: Copy default site conf to available
+  copy:
+    src: default
+    dest: /etc/nginx/sites-available/default
+
+- name: Copy rutorrent site conf to available
+  copy:
+    src: rutorrent
+    dest: /etc/nginx/sites-available/rutorrent
+
+- name: Symlink rutorrent site conf to enabled
+  file:
+    src: /etc/nginex/sites-available/rutorrent
+    dest: /etc/nginx/sites-enabled/rutorrent
+    owner: root
+    group: root
+    state: link
+
+- name: Restart nginx
+  service:
+    name: nginx
+    state: restarted

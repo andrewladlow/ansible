@@ -1,6 +1,6 @@
 directory = /home/{{ username }}/downloads
-session = /home/{{ username }}/downloads/.session
-schedule = watch_directory,5,5,load_start=/home/{{ username }}/downloads/~watch/*.torrent
+session = /home/{{ username }}/.session
+schedule = watch_directory,5,5,load_start=/home/{{ username }}/~watch/*.torrent
 schedule = low_diskspace,5,60,close_low_diskspace=10240M
 port_range = 55950-56000
 port_random = yes

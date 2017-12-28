@@ -1,5 +1,5 @@
 ---
-- name: Install rutorrent dependencies
+- name: Install rutorrent dependencies and helpers
   package: 
     name: "{{ item }}"
     state: present
@@ -13,6 +13,10 @@
   - rar
   - git
   - subversion
+  - libxmlrpc-c++8v5
+  - php7.0
+  - php7.0-fpm
+  - php-geoip
 
 - name: Download rutorrent package
   git:
@@ -20,8 +24,8 @@
     dest: /opt/rutorrent
 
 - name: Replace rutorrent config
-  copy:
-    src: config.php
+  template:
+    src: config.php.j2
     dest: /opt/rutorrent/conf/config.php
 
 - name: Replace rutorrent plugins config
@@ -37,3 +41,8 @@
     group: www-data
     mode: 0755
     recurse: yes
+
+- name: Remove spectogram plugin
+  file:
+    state: absent
+    dest: /opt/rutorrent/plugins/spectogram

@@ -10,3 +10,8 @@
     src: files/screenrc
     dest: ~/.screenrc
     backup: yes
+
+- name: Install bash auto complete
+  package:
+    name: bash-completion
+    state: present

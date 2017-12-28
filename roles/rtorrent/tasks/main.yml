@@ -27,8 +27,8 @@
     owner: "{{ username }}"
     group: "{{ username }}"
   with_items:
-    - /home/{{ username }}/downloads/.session
-    - /home/{{ username }}/downloads/~watch
+    - /home/{{ username }}/.session
+    - /home/{{ username }}/~watch
 
 - name: Copy rtorrent service file
   template:

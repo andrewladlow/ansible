@@ -6,6 +6,11 @@
     createhome: no
     shell: /bin/false
 
+- name: Install bzip2
+  package:
+    name: bzip2
+    state: present
+
 - name: Get latest teamspeak server version
   # get_url or uri module possible here?
   shell: wget -q https://www.teamspeak.com/en/downloads.html -O - | grep -m 1 -A 2 'Server 64-bit' | grep -m 1 -E -o '.\..\..{1,2}'

@@ -3,7 +3,7 @@
   hosts: all
   #gather_facts: no
   pre_tasks:
-    #- raw: apt-get -y install python-simplejson
+    #  - raw: apt-get -y install python-simplejson
   roles: 
     #- nginx
     #- seedbox
@@ -15,4 +15,4 @@
     #- munin-node
     #- rtorrent
     #- journald
-    - seedbox
+    - ssh

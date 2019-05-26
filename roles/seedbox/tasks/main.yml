@@ -55,7 +55,7 @@
     name: nginx
     state: restarted
 
-- name: Restart PHP 7.0 FPM
+- name: Restart PHP 7.3 FPM
   service: 
-    name: php7.0-fpm
+    name: php7.3-fpm
     state: restarted

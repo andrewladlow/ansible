@@ -48,8 +48,8 @@
 
 - name: Symlink rutorrent site conf to enabled
   file:
-    src: /etc/nginex/sites-enabled/rutorrent
-    dest: /etc/nginx/sites-available/rutorrent
+    src: /etc/nginx/sites-available/rutorrent
+    dest: /etc/nginx/sites-enabled/rutorrent
     owner: root
     group: root
     state: link

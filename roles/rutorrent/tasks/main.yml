@@ -22,6 +22,7 @@
   git:
     repo: https://github.com/Novik/ruTorrent
     dest: /opt/rutorrent
+    force: yes
 
 - name: Replace rutorrent config
   template:

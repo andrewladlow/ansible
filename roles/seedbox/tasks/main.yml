@@ -16,6 +16,9 @@
     name: apache2-utils
     state: present
 
+- name: Install passlib for htpasswd
+  apt: "pkg=python-passlib state=installed"
+
 - name: Create rutorrent htpasswd
   htpasswd:
     path: /etc/nginx/.htpasswd

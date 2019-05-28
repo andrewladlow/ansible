@@ -17,7 +17,9 @@
     state: present
 
 - name: Install passlib for htpasswd
-  apt: "pkg=python-passlib state=installed"
+  package:
+    name: python-passlib
+    state: present
 
 - name: Create rutorrent htpasswd
   htpasswd:

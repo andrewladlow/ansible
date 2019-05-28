@@ -17,6 +17,7 @@
     state: present
 
 - name: Create rutorrent htpasswd
+  file:
     path: /etc/nginx/.htpasswd
     name: "{{ username }}"
     password: "{{ password }}"

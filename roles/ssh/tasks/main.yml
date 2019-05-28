@@ -6,3 +6,7 @@
     line: 'Port {{ sshPort }}'
     backrefs: yes
   notify: "Restart ssh"
+
+- name: Set fact for new port
+  set_fact:
+    ansible_port: '{{ sshPort }}'

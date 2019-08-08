@@ -2,7 +2,7 @@
 - name: Set ssh port
   lineinfile:
     path: /etc/ssh/sshd_config
-    regexp: '^Port'
+    regexp: '^#?Port'
     line: 'Port {{ sshPort }}'
     backrefs: yes
   notify: "Restart ssh"

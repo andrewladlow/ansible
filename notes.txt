@@ -8,6 +8,14 @@ remove spectogram plugin
 install php-geoip
 restart php7.0-fpm
 
+install python3-pip
+pip3 install cfscrape cloudscraper
+set rutorrent user shell to /bin/bash
+install sox pcregrep g++ python3-dev
+add lines to /var/www/html/rutorrent/conf/config.php:
+ - "pgrep" => '/usr/bin/pgrep',
+ - "python" => '/usr/bin/python3',
+
 install bash-completion
 
 

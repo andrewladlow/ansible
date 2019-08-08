@@ -1,10 +1,6 @@
 symlink /home/rtorrent/downloads to /storage/downloads
 chmod -h the symlink to rtorrent
 
-install php7.0-fpm
-symlink /opt/rutorrent to /var/www/html/rutorrent
-copy rutorrent to sites-available/rutorrent
-symlink to sites-enabled
 remove sites-enabled/default symlink
 restart nginx
 remove spectogram plugin

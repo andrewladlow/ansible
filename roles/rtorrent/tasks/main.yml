@@ -12,7 +12,7 @@
 - name: Add rtorrent user
   user:
     name: "{{ username }}"
-    home: "{{ home }}"
+    home: "/home/{{ username }}"
     shell: "{{ shell }}"
 
 - name: Copy .rtorrent.rc config file

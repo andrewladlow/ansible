@@ -6,13 +6,13 @@
     #  - raw: apt-get -y install python-simplejson
   roles: 
     #- nginx
-    #- seedbox
+    - seedbox
     #- vim
     #- teamspeak
     #- datetime
-    - bash-prompt
+    #- bash-prompt
     #- munin
     #- munin-node
     #- rtorrent
-    #- journald
-    - ssh
+    - journald
+    #- ssh

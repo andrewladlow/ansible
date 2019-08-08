@@ -14,8 +14,8 @@
   - git
   - subversion
   - libxmlrpc-c++8v5
-    #  - php7.0
-    #  - php7.0-fpm
+  - php7.3
+  - php7.3-fpm
   - php-geoip
 
 - name: Download rutorrent package
